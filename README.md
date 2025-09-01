@@ -4,4 +4,4 @@
 Этот репозиторий является каркасом для будущего веб-приложения.
 
 ## Ссылки
-- [Публичная страница на GitHub Pages](https://fr0olyy.github.io/Student_frontend/)
+- [Публичная страница на GitHub Pages](https://fr0olyy.github.io/Student_frontend/src/index.html)
