@@ -6,7 +6,7 @@ const form = document.getElementById('contactForm');
 let lastActive = null;
 openBtn.addEventListener('click', () => {
     lastActive = document.activeElement;
-    dlg.showModal();                               // модальный режим + 
+    dlg.showModal();                              
     затемнение
     dlg.querySelector('input,select,textarea,button')?.focus();
 });
@@ -14,8 +14,27 @@ openBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => dlg.close('cancel'));
 
 form?.addEventListener('submit', (e) => {
-    // валидация см. 1.4.2; при успехе закрываем окно 
 });
 
 dlg.addEventListener('close', () => { lastActive?.focus(); });
-// Esc по умолчанию вызывает событие 'cancel' и закрывает <dialog> 
+
+document.getElementById('openDialog').addEventListener('click', () => {
+    const dialog = document.getElementById('contactDialog');
+    dialog.showModal();
+});
+
+document.getElementById('closeDialog').addEventListener('click', () => {
+    const dialog = document.getElementById('contactDialog');
+    dialog.close();
+});
+
+document.getElementById('closeDialogBtn').addEventListener('click', () => {
+    const dialog = document.getElementById('contactDialog');
+    dialog.close();
+});
+
+document.getElementById('contactDialog').addEventListener('click', (event) => {
+    if (event.target === document.getElementById('contactDialog')) {
+        document.getElementById('contactDialog').close();
+    }
+});
